@@ -238,7 +238,7 @@ function NFTTokenIds({ inputValue, setInputValue }) {
                     alt=""
                     style={{ height: "240px" }}
                   />
-                }
+                } /* Imagem das nft no explore */
                 key={index}
               >
                 <Meta title={nft.name} />

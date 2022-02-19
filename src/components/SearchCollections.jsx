@@ -1,7 +1,7 @@
 import { Select } from 'antd';
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getCollectionsByChain } from "helpers/collections";
-
+import '../style.css'
 
 function SearchCollections({setInputValue}){
     const { Option } = Select;
@@ -18,8 +18,9 @@ function SearchCollections({setInputValue}){
         <>
         <Select
             showSearch
-            style={{width: "1000px",
-                    marginLeft: "20px" }}
+            style={{width: "386px",
+            marginRight: "20px",
+                     }}
             placeholder="Find a Collection"
             optionFilterProp="children"
             onChange={onChange}

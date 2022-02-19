@@ -9,6 +9,7 @@ const styles = {
   item: {
     display: "flex",
     alignItems: "center",
+    marginTop:12,
     height: "42px",
     fontWeight: "500",
     fontFamily: "Roboto, sans-serif",
