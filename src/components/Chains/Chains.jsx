@@ -9,7 +9,7 @@ const styles = {
   item: {
     display: "flex",
     alignItems: "center",
-    marginTop:12,
+    marginTop:1,
     height: "42px",
     fontWeight: "500",
     fontFamily: "Roboto, sans-serif",

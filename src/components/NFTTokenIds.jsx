@@ -16,6 +16,7 @@ import {
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getExplorer } from "helpers/networks";
 import { useWeb3ExecuteFunction } from "react-moralis";
+import '../../src/style.css'
 const { Meta } = Card;
 
 const styles = {
@@ -25,8 +26,9 @@ const styles = {
     WebkitBoxPack: "start",
     justifyContent: "flex-start",
     margin: "0 auto",
-    maxWidth: "1000px",
-    gap: "10px",
+    marginLeft: 295,
+    gap: "20px",
+    borderRadius: "10%",
   },
   banner: {
     display: "flex",
@@ -46,13 +48,14 @@ const styles = {
     borderRadius: "50%",
     // positon: "relative",
     // marginTop: "-80px",
-    border: "solid 4px white",
+    
   },
   text: {
     color: "#041836",
     fontSize: "27px",
     fontWeight: "bold",
   },
+
 };
 
 function NFTTokenIds({ inputValue, setInputValue }) {
@@ -170,13 +173,10 @@ function NFTTokenIds({ inputValue, setInputValue }) {
 
   return (
     <>
-      <div>
+      <div style={styles.container2} >
         {contractABIJson.noContractDeployed && (
           <>
-            <Alert
-              message="No Smart Contract Details Provided. Please deploy smart contract and provide address + ABI in the MoralisDappProvider.js file"
-              type="error"
-            />
+            
             <div style={{ marginBottom: "10px" }}></div>
           </>
         )}
@@ -223,20 +223,21 @@ function NFTTokenIds({ inputValue, setInputValue }) {
               <Card
                 hoverable
                 actions={[
-                  <Tooltip title="View Collection">
+                  <Tooltip className="tooltip" title="View Collection">
                     <RightCircleOutlined
                       onClick={() => setInputValue(nft?.addrs)}
                     />
                   </Tooltip>,
                 ]}
-                style={{ width: 240, border: "2px solid #e7eaf3" }}
+                style={{ width: 350, backgroundColor:"#191820" }}
                 cover={
                   <Image
                     preview={false}
                     src={nft?.image || "error"}
                     fallback={fallbackImg}
                     alt=""
-                    style={{ height: "240px" }}
+                    style={{  height: "350px", 
+                               }}
                   />
                 } /* Imagem das nft no explore */
                 key={index}

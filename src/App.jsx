@@ -33,16 +33,16 @@ const styles = {
   },
   header: {
     position: "fixed",
-    zIndex: 1,
+    zIndex: 2,
     width: "100%",
-    background: "#292929",
+    background: "#191820",
     display: "flex",
+    height: 80,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     fontFamily: "Roboto, sans-serif",
     borderBottom: "2px solid rgba(0, 0, 0, 0.06)",
     padding: "0 10px",
-    boxShadow: "0 1px 10px rgb(151 164 175 / 10%)",
     color:"#fff"
   },
   headerRight: {
@@ -51,10 +51,10 @@ const styles = {
     alignItems: "center",
     fontSize: "15px",
     fontWeight: "600",
-    marginRight:25
+    marginRight:25,
   },
   teste:{
-    backgroundColor: "#292929",
+    backgroundColor: "#191820",
     width: "100%",
     height: "7%",
     zIndex: 2,
@@ -67,12 +67,35 @@ const styles = {
   teste2:{
     color: "rgba(218, 218, 218, 0.801)",
   },
+  teste4:{
+    backgroundColor:"blue",
+    borderRadius:5,
+    width: 170,
+  },
   logo:{
     width: "85px",
     height: "24px",
     marginLeft:25,
-    marginBottom:11
+    marginBottom:5
   },
+  navbar_lateral:{
+    backgroundColor: "#191820",
+    width: "12%",
+    height: "100%",
+    position: "fixed",
+    zIndex:1,
+    display: "block",
+  },
+  text_navbar_lateral:{
+    marginTop:90,
+    display: "flex",
+    justifyContent: "center",
+    marginLeft:10,
+  },
+  testenav:{
+    display: "inline-block",
+    verticalAlign: "middle",
+  }
 };
 const App = ({ isServerInfo }) => {
   const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
@@ -88,44 +111,29 @@ const App = ({ isServerInfo }) => {
   }, [isAuthenticated, isWeb3Enabled]);
 
   return (
-    <Layout style={{ height: "100vh", overflow: "auto" }}>
+    <Layout style={{ height: "100vh", overflow: "auto", background: "#1d1c26" }}>
       <Router>
         <Header style={styles.header}>
-          
-          <Menu
-            theme="light"
-            mode="horizontal"
-            style={{
-              display: "flex",
-              fontSize: "17px",
-              fontWeight: "500",
-              marginLeft: "1.5%",
-              backgroundColor: "#292929",
-              width: "100%",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-            defaultSelectedKeys={["nftMarket"]}
-          >
-            <Menu.Item key="nftMarket" onClick={() => setInputValue("explore")} >
-              <NavLink style={styles.teste2} to="/NFTMarketPlace">🛒 Marketplace</NavLink>
-            </Menu.Item>
-            <Menu.Item key="nft">
-              <NavLink style={styles.teste2} to="/nftBalance">🖼 Your Collection</NavLink>
-            </Menu.Item>
-            <Menu.Item key="transactions">
-              <NavLink style={styles.teste2} to="/Transactions">📑 Your Transactions</NavLink>
-            </Menu.Item>
-          </Menu>
+        <img src={Logo} style={styles.logo}/>
+        <SearchCollections setInputValue={setInputValue}/>
           <div style={styles.headerRight}>
             <Chains />
           </div>
         </Header>
-        <div className="navbar-shadow" style={styles.teste}>
-          <div style={styles.search}>
-            <SearchCollections setInputValue={setInputValue}/>
+
+        <div style={styles.navbar_lateral} className="navbar-lateral">
+
+          <div style={styles.text_navbar_lateral}>
+            <ul className="navbar-lateral-ul">
+              <li style={styles.teste3}><NavLink style={styles.teste2} to="/NFTMarketPlace">🛒 Marketplace</NavLink></li> 
+              <li style={styles.teste3}><NavLink style={styles.teste2} to="/nftBalance">🖼 My Collection</NavLink></li> 
+              <li style={styles.teste3}><NavLink style={styles.teste2} to="/Transactions">📑 Transactions</NavLink></li> 
+            </ul>
+            <ul>
+            </ul>
           </div>
         </div>
+
         <div style={styles.content}>
           <Switch>
             <Route path="/nftBalance">
@@ -141,7 +149,7 @@ const App = ({ isServerInfo }) => {
           <Redirect to="/NFTMarketPlace" />
         </div>
       </Router>
-      <Footer style={{ textAlign: "center" }}>
+      <Footer style={{ textAlign: "center", backgroundColor:"#1d1c26" }}>
         <Text style={{ display: "block" }}>
           ⭐️ Please star this{" "}
           <a
