@@ -14,7 +14,7 @@
   color: #fff !important;
 }
 
-.text_navbar{
+.text_navbar {
   color: #fff;
 }
 
@@ -23,20 +23,80 @@
   border-radius: 1rem;
 }
 
-.navbar-lateral-ul li{
+.navbar-lateral-ul li {
   list-style-type: none;
   font-size: 18px;
   margin-top: 15px;
   padding-left: 10px;
-  height:45px;
+  height: 45px;
   width: 190px;
+  background-color: #1c1326;
+  border-radius: 5px;
   margin-left: 20px;
   padding-top: 9px;
 }
 
-.navbar-lateral-ul li:hover{
-  background-color: #1E1D25;
-  border-radius:5px;
+.chains-style {
+  margin-top: 540px;
+  padding-left: 62px;
 }
 
+.navbar-lateral-ul li:hover {
+  background-color: #543973;
+  border-radius: 5px;
+}
 
+.ant-card-meta-title {
+  color: #fff !important;
+}
+
+.ant-card-bordered {
+  border: 1px solid #1e1d25 !important;
+}
+
+.ant-card-actions {
+  background: #120c18 !important;
+  border-top: 1px solid #120c18 !important;
+}
+
+.ant-card-body {
+  text-align: center !important;
+}
+
+.container_teste2:hover {
+  color: #543973 !important;
+}
+
+.container_teste2 {
+  color: #fff !important;
+}
+
+.testeradius {
+  border-radius: 30px !important;
+}
+
+.ant-select-selector {
+  border-radius: 7px !important;
+  border: 1px solid #543973 !important;
+  background-color: #1c1326 !important;
+}
+
+.ant-select-selector:hover {
+  border-color: #543973 !important;
+}
+
+.title-collection {
+  color: #fff;
+}
+
+.ant-card {
+  background: #120c18 !important;
+}
+
+.ant-card-meta-description {
+  color: #fff !important;
+}
+
+/*.imageteste {
+  border-radius: 6px !important;
+} ARREDONDAR A IMAGEM NFT */

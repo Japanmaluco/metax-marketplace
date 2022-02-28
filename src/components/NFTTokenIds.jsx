@@ -16,7 +16,7 @@ import {
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getExplorer } from "helpers/networks";
 import { useWeb3ExecuteFunction } from "react-moralis";
-import '../../src/style.css'
+import "../../src/style.css";
 const { Meta } = Card;
 
 const styles = {
@@ -39,8 +39,6 @@ const styles = {
     //borderRadius: "10px",
     height: "150px",
     marginBottom: "40px",
-    paddingBottom: "20px",
-    borderBottom: "solid 1px #e3e3e3",
   },
   logo: {
     height: "115px",
@@ -48,14 +46,12 @@ const styles = {
     borderRadius: "50%",
     // positon: "relative",
     // marginTop: "-80px",
-    
   },
   text: {
     color: "#041836",
     fontSize: "27px",
     fontWeight: "bold",
   },
-
 };
 
 function NFTTokenIds({ inputValue, setInputValue }) {
@@ -173,10 +169,9 @@ function NFTTokenIds({ inputValue, setInputValue }) {
 
   return (
     <>
-      <div style={styles.container2} >
+      <div style={styles.container2}>
         {contractABIJson.noContractDeployed && (
           <>
-            
             <div style={{ marginBottom: "10px" }}></div>
           </>
         )}
@@ -200,18 +195,16 @@ function NFTTokenIds({ inputValue, setInputValue }) {
                 style={styles.logo}
               />
               <div style={styles.text}>
-                <>
-                  <div>{`${NFTTokenIds[0]?.name}`}</div>
-                  <div
-                    style={{
-                      fontSize: "15px",
-                      color: "#9c9c9c",
-                      fontWeight: "normal",
-                    }}
-                  >
-                    Collection Size: {`${totalNFTs}`}
-                  </div>
-                </>
+                <div className="title-collection">{`${NFTTokenIds[0]?.name}`}</div>
+                <div
+                  style={{
+                    fontSize: "15px",
+                    color: "#9c9c9c",
+                    fontWeight: "normal",
+                  }}
+                >
+                  Items: {`${totalNFTs}`}
+                </div>
               </div>
             </div>
           </>
@@ -223,26 +216,33 @@ function NFTTokenIds({ inputValue, setInputValue }) {
               <Card
                 hoverable
                 actions={[
-                  <Tooltip className="tooltip" title="View Collection">
+                  <Tooltip
+                    className="tooltip"
+                    title="View Collection"
+                    style={{ backgroundColor: "red" }}
+                  >
                     <RightCircleOutlined
+                      className="container_teste2"
                       onClick={() => setInputValue(nft?.addrs)}
                     />
                   </Tooltip>,
                 ]}
-                style={{ width: 350, backgroundColor:"#191820" }}
+                style={{
+                  width: 350,
+                  backgroundColor: "#191820",
+                }}
                 cover={
                   <Image
                     preview={false}
                     src={nft?.image || "error"}
                     fallback={fallbackImg}
                     alt=""
-                    style={{  height: "350px", 
-                               }}
+                    style={{ height: "350px" }}
                   />
                 } /* Imagem das nft no explore */
                 key={index}
               >
-                <Meta title={nft.name} />
+                <Meta title={nft.name} style={styles.logo2} />
               </Card>
             ))}
 
@@ -253,6 +253,7 @@ function NFTTokenIds({ inputValue, setInputValue }) {
                 actions={[
                   <Tooltip title="View On Blockexplorer">
                     <FileSearchOutlined
+                      style={{ color: "#fff" }}
                       onClick={() =>
                         window.open(
                           `${getExplorer(chainId)}address/${nft.token_address}`,
@@ -262,7 +263,10 @@ function NFTTokenIds({ inputValue, setInputValue }) {
                     />
                   </Tooltip>,
                   <Tooltip title="Buy NFT">
-                    <ShoppingCartOutlined onClick={() => handleBuyClick(nft)} />
+                    <ShoppingCartOutlined
+                      style={{ color: "#fff" }}
+                      onClick={() => handleBuyClick(nft)}
+                    />
                   </Tooltip>,
                 ]}
                 style={{ width: 240, border: "2px solid #e7eaf3" }}
@@ -272,15 +276,19 @@ function NFTTokenIds({ inputValue, setInputValue }) {
                     src={nft.image || "error"}
                     fallback={fallbackImg}
                     alt=""
+                    className="imageteste"
                     style={{ height: "240px" }}
                   />
                 }
                 key={index}
               >
                 {getMarketItem(nft) && (
-                  <Badge.Ribbon text="Buy Now" color="green"></Badge.Ribbon>
+                  <Badge.Ribbon text="Buy Now"></Badge.Ribbon>
                 )}
-                <Meta title={nft.name} description={`#${nft.token_id}`} />
+                <Meta
+                  className="title-buynft"
+                  description={`${nft.name}  #${nft.token_id}`}
+                />
               </Card>
             ))}
         </div>

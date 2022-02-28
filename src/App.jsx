@@ -1,4 +1,4 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
 import {
   BrowserRouter as Router,
@@ -11,15 +11,15 @@ import Account from "components/Account";
 import Chains from "components/Chains";
 import NFTBalance from "components/NFTBalance";
 import NFTTokenIds from "components/NFTTokenIds";
-import { Menu, Layout} from "antd";
+import { Menu, Layout } from "antd";
 import SearchCollections from "components/SearchCollections";
 import "antd/dist/antd.css";
 import NativeBalance from "components/NativeBalance";
 import "./style.css";
 import Text from "antd/lib/typography/Text";
 import NFTMarketTransactions from "components/NFTMarketTransactions";
-import Logo from '../src/components/img/logo.png'
-import './style.css'
+import Logo from "../src/components/img/logo.png";
+import "./style.css";
 const { Header, Footer } = Layout;
 
 const styles = {
@@ -35,7 +35,7 @@ const styles = {
     position: "fixed",
     zIndex: 2,
     width: "100%",
-    background: "#191820",
+    background: "#09060D",
     display: "flex",
     height: 80,
     alignItems: "center",
@@ -43,7 +43,7 @@ const styles = {
     fontFamily: "Roboto, sans-serif",
     borderBottom: "2px solid rgba(0, 0, 0, 0.06)",
     padding: "0 10px",
-    color:"#fff"
+    color: "#fff",
   },
   headerRight: {
     display: "flex",
@@ -51,10 +51,10 @@ const styles = {
     alignItems: "center",
     fontSize: "15px",
     fontWeight: "600",
-    marginRight:25,
+    marginLeft: -95,
   },
-  teste:{
-    backgroundColor: "#191820",
+  teste: {
+    backgroundColor: "#0D0912",
     width: "100%",
     height: "7%",
     zIndex: 2,
@@ -64,44 +64,46 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
   },
-  teste2:{
+  teste2: {
     color: "rgba(218, 218, 218, 0.801)",
   },
-  teste4:{
-    backgroundColor:"blue",
-    borderRadius:5,
+  teste4: {
+    backgroundColor: "blue",
+    borderRadius: 5,
     width: 170,
   },
-  logo:{
+  logo: {
     width: "85px",
     height: "24px",
-    marginLeft:25,
-    marginBottom:5
+    marginLeft: 55,
+    marginBottom: 2,
   },
-  navbar_lateral:{
-    backgroundColor: "#191820",
+  navbar_lateral: {
+    backgroundColor: "#120C18",
     width: "12%",
     height: "100%",
     position: "fixed",
-    zIndex:1,
+    zIndex: 1,
     display: "block",
+    borderRight: "2px solid #543973",
   },
-  text_navbar_lateral:{
-    marginTop:90,
+  text_navbar_lateral: {
+    marginTop: 90,
     display: "flex",
     justifyContent: "center",
-    marginLeft:10,
+    marginLeft: 10,
   },
-  testenav:{
+  teste3: {
+    cursor: "pointer",
+  },
+  testenav: {
     display: "inline-block",
     verticalAlign: "middle",
-  }
+  },
 };
 const App = ({ isServerInfo }) => {
   const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
     useMoralis();
-
-
 
   const [inputValue, setInputValue] = useState("explore");
 
@@ -111,36 +113,52 @@ const App = ({ isServerInfo }) => {
   }, [isAuthenticated, isWeb3Enabled]);
 
   return (
-    <Layout style={{ height: "100vh", overflow: "auto", background: "#1d1c26" }}>
+    <Layout
+      style={{ height: "100vh", overflow: "auto", background: "#1C1326" }}
+    >
       <Router>
         <Header style={styles.header}>
-        <img src={Logo} style={styles.logo}/>
-        <SearchCollections setInputValue={setInputValue}/>
-          <div style={styles.headerRight}>
-            <Chains />
-          </div>
+          <a href="/NFTMarketPlace">
+            <img src={Logo} style={styles.logo} />
+          </a>
+          <SearchCollections setInputValue={setInputValue} />
+          <div style={styles.headerRight}></div>
         </Header>
 
         <div style={styles.navbar_lateral} className="navbar-lateral">
-
           <div style={styles.text_navbar_lateral}>
             <ul className="navbar-lateral-ul">
-              <li style={styles.teste3}><NavLink style={styles.teste2} to="/NFTMarketPlace">🛒 Marketplace</NavLink></li> 
-              <li style={styles.teste3}><NavLink style={styles.teste2} to="/nftBalance">🖼 My Collection</NavLink></li> 
-              <li style={styles.teste3}><NavLink style={styles.teste2} to="/Transactions">📑 Transactions</NavLink></li> 
+              <li style={styles.teste3}>
+                <NavLink style={styles.teste2} to="/NFTMarketPlace">
+                  🛒 Marketplace
+                </NavLink>
+              </li>
+              <li style={styles.teste3}>
+                <NavLink style={styles.teste2} to="/nftBalance">
+                  🖼 My Collection
+                </NavLink>
+              </li>
+              <li style={styles.teste3}>
+                <NavLink style={styles.teste2} to="/Transactions">
+                  📑 Transactions
+                </NavLink>
+              </li>
+              <div className="chains-style">
+                <Chains />
+              </div>
             </ul>
-            <ul>
-            </ul>
+            <ul></ul>
           </div>
         </div>
 
         <div style={styles.content}>
           <Switch>
-            <Route path="/nftBalance">
-              <NFTBalance />
-            </Route>
+            <Route path="/nftBalance"></Route>
             <Route path="/NFTMarketPlace">
-              <NFTTokenIds inputValue={inputValue} setInputValue={setInputValue}/>
+              <NFTTokenIds
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+              />
             </Route>
             <Route path="/Transactions">
               <NFTMarketTransactions />
@@ -149,8 +167,8 @@ const App = ({ isServerInfo }) => {
           <Redirect to="/NFTMarketPlace" />
         </div>
       </Router>
-      <Footer style={{ textAlign: "center", backgroundColor:"#1d1c26" }}>
-        <Text style={{ display: "block" }}>
+      <Footer style={{ textAlign: "center", backgroundColor: "#1d1c26" }}>
+        <Text style={{ display: "block", color: "white" }}>
           ⭐️ Please star this{" "}
           <a
             href="https://github.com/ethereum-boilerplate/ethereum-boilerplate/"
@@ -162,7 +180,7 @@ const App = ({ isServerInfo }) => {
           , every star makes us very happy!
         </Text>
 
-        <Text style={{ display: "block" }}>
+        <Text style={{ display: "block", color: "white" }}>
           🙋 You have questions? Ask them on the {""}
           <a
             target="_blank"
@@ -173,7 +191,7 @@ const App = ({ isServerInfo }) => {
           </a>
         </Text>
 
-        <Text style={{ display: "block" }}>
+        <Text style={{ display: "block", color: "white" }}>
           📖 Read more about{" "}
           <a
             target="_blank"
@@ -187,7 +205,5 @@ const App = ({ isServerInfo }) => {
     </Layout>
   );
 };
-
-
 
 export default App;

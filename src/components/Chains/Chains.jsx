@@ -4,21 +4,28 @@ import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvide
 import { Menu, Dropdown, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { AvaxLogo, PolygonLogo, BSCLogo, ETHLogo } from "./Logos";
+import Carteira from "../img/carteira.png";
 
 const styles = {
   item: {
     display: "flex",
     alignItems: "center",
-    marginTop:1,
-    height: "42px",
+    marginTop: 1,
+    height: "52px",
+    width: "110px",
     fontWeight: "500",
     fontFamily: "Roboto, sans-serif",
     fontSize: "14px",
     padding: "0 10px",
+    color: "white",
+    border: "2px solid #543973",
+    borderRadius: "12px",
+    backgroundColor: "#1c1326",
   },
   button: {
-    border: "2px solid rgb(231, 234, 243)",
+    border: "2px solid #543973",
     borderRadius: "12px",
+    backgroundColor: "#1c1326",
   },
 };
 
@@ -98,13 +105,16 @@ function Chains() {
   };
 
   const menu = (
-    <Menu onClick={handleMenuClick}>
+    <Menu
+      style={{ backgroundColor: "#1c1326", borderRadius: 12 }}
+      onClick={handleMenuClick}
+    >
       {menuItems.map((item) => (
         <Menu.Item key={item.key} icon={item.icon} style={styles.item}>
           <span style={{ marginLeft: "5px" }}>{item.value}</span>
         </Menu.Item>
       ))}
-    </Menu> 
+    </Menu>
   );
 
   return (
@@ -112,10 +122,11 @@ function Chains() {
       <Dropdown overlay={menu} trigger={["click"]}>
         <Button
           key={selected?.key}
-          icon={selected?.icon}
           style={{ ...styles.button, ...styles.item }}
         >
-          <span style={{ marginLeft: "5px" }}>{selected?.value}</span>
+          <span style={{}}>
+            <img src={Carteira} style={{ width: "70px", height: "40px" }} />
+          </span>
           <DownOutlined />
         </Button>
       </Dropdown>
