@@ -16,7 +16,7 @@ function SearchCollections({ setInputValue }) {
     <>
       <Select
         showSearch
-        style={{ width: "486px", marginRight: "20px" }}
+        style={{ width: "526px", marginRight: "20px" }}
         placeholder="Find a Collection"
         optionFilterProp="children"
         onChange={onChange}

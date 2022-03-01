@@ -30,19 +30,21 @@
   padding-left: 10px;
   height: 45px;
   width: 190px;
-  background-color: #1c1326;
-  border-radius: 5px;
   margin-left: 20px;
   padding-top: 9px;
 }
 
 .chains-style {
-  margin-top: 540px;
-  padding-left: 62px;
+  margin-top: 490px;
+  padding-left: 66px;
+}
+
+.nav-lateral-text:hover {
+  color: #fff;
 }
 
 .navbar-lateral-ul li:hover {
-  background-color: #543973;
+  background-color: #1c1326;
   border-radius: 5px;
 }
 
@@ -61,6 +63,7 @@
 
 .ant-card-body {
   text-align: center !important;
+  padding-bottom: 8px !important;
 }
 
 .container_teste2:hover {
@@ -74,11 +77,32 @@
 .testeradius {
   border-radius: 30px !important;
 }
+.ant-card {
+  border: 1px solid #120c18 !important;
+  border-radius: 15px !important;
+}
+
+.ant-card-actions {
+  border: 1px solid #120c18 !important;
+  border-radius: 15px !important;
+}
+
+.ant-image-img {
+  border: 1px solid #120c18 !important;
+  border-radius: 15px !important;
+  border-bottom: 1px solid #543973 !important;
+}
+
+.ant-card {
+  border: 1px solid #543973 !important;
+}
 
 .ant-select-selector {
   border-radius: 7px !important;
-  border: 1px solid #543973 !important;
-  background-color: #1c1326 !important;
+  height: 40px !important;
+  align-items: center !important;
+  border: 2px solid #543973 !important;
+  background-color: #120c18 !important;
 }
 
 .ant-select-selector:hover {
@@ -100,3 +124,9 @@
 /*.imageteste {
   border-radius: 6px !important;
 } ARREDONDAR A IMAGEM NFT */
+
+.container-search {
+  margin-left: 780px;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}

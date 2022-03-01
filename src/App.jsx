@@ -28,7 +28,6 @@ const styles = {
     justifyContent: "center",
     fontFamily: "Roboto, sans-serif",
     color: "#fff",
-    marginTop: "130px",
     padding: "10px",
   },
   header: {
@@ -65,7 +64,7 @@ const styles = {
     alignItems: "center",
   },
   teste2: {
-    color: "rgba(218, 218, 218, 0.801)",
+    color: "rgba(218, 218, 218, 0.901)",
   },
   teste4: {
     backgroundColor: "blue",
@@ -73,10 +72,11 @@ const styles = {
     width: 170,
   },
   logo: {
-    width: "85px",
-    height: "24px",
-    marginLeft: 55,
+    width: "95px",
+    height: "28px",
+    marginLeft: 68,
     marginBottom: 2,
+    marginTop: 50,
   },
   navbar_lateral: {
     backgroundColor: "#120C18",
@@ -86,11 +86,13 @@ const styles = {
     zIndex: 1,
     display: "block",
     borderRight: "2px solid #543973",
+    justifyContent: "center",
+    alignItems: "center",
   },
   text_navbar_lateral: {
-    marginTop: 90,
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
     marginLeft: 10,
   },
   teste3: {
@@ -117,32 +119,29 @@ const App = ({ isServerInfo }) => {
       style={{ height: "100vh", overflow: "auto", background: "#1C1326" }}
     >
       <Router>
-        <Header style={styles.header}>
-          <a href="/NFTMarketPlace">
-            <img src={Logo} style={styles.logo} />
-          </a>
-          <SearchCollections setInputValue={setInputValue} />
-          <div style={styles.headerRight}></div>
-        </Header>
-
         <div style={styles.navbar_lateral} className="navbar-lateral">
           <div style={styles.text_navbar_lateral}>
             <ul className="navbar-lateral-ul">
-              <li style={styles.teste3}>
-                <NavLink style={styles.teste2} to="/NFTMarketPlace">
-                  🛒 Marketplace
-                </NavLink>
-              </li>
-              <li style={styles.teste3}>
-                <NavLink style={styles.teste2} to="/nftBalance">
-                  🖼 My Collection
-                </NavLink>
-              </li>
-              <li style={styles.teste3}>
-                <NavLink style={styles.teste2} to="/Transactions">
-                  📑 Transactions
-                </NavLink>
-              </li>
+              <a href="/NFTMarketPlace">
+                <img src={Logo} style={styles.logo} />
+              </a>
+              <div style={{ marginTop: 60 }}>
+                <li style={styles.teste3}>
+                  <NavLink style={styles.teste2} to="/NFTMarketPlace">
+                    🛒 Marketplace
+                  </NavLink>
+                </li>
+                <li style={styles.teste3}>
+                  <NavLink style={styles.teste2} to="/nftBalance">
+                    🖼 My Collection
+                  </NavLink>
+                </li>
+                <li style={styles.teste3}>
+                  <NavLink style={styles.teste2} to="/Transactions">
+                    📑 Transactions
+                  </NavLink>
+                </li>
+              </div>
               <div className="chains-style">
                 <Chains />
               </div>

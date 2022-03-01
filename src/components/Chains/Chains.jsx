@@ -12,7 +12,7 @@ const styles = {
     alignItems: "center",
     marginTop: 1,
     height: "52px",
-    width: "110px",
+    width: "100px",
     fontWeight: "500",
     fontFamily: "Roboto, sans-serif",
     fontSize: "14px",
@@ -125,7 +125,7 @@ function Chains() {
           style={{ ...styles.button, ...styles.item }}
         >
           <span style={{}}>
-            <img src={Carteira} style={{ width: "70px", height: "40px" }} />
+            <img src={Carteira} style={{ width: "50px", height: "30px" }} />
           </span>
           <DownOutlined />
         </Button>

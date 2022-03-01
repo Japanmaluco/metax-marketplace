@@ -7,6 +7,7 @@ import {
   useNewMoralisObject,
 } from "react-moralis";
 import { Card, Image, Tooltip, Modal, Badge, Alert, Spin } from "antd";
+import SearchCollections from "components/SearchCollections";
 import { useNFTTokenIds } from "hooks/useNFTTokenIds";
 import {
   FileSearchOutlined,
@@ -169,7 +170,10 @@ function NFTTokenIds({ inputValue, setInputValue }) {
 
   return (
     <>
-      <div style={styles.container2}>
+      <div>
+        <div className="container-search">
+          <SearchCollections setInputValue={setInputValue} />
+        </div>
         {contractABIJson.noContractDeployed && (
           <>
             <div style={{ marginBottom: "10px" }}></div>
@@ -243,6 +247,16 @@ function NFTTokenIds({ inputValue, setInputValue }) {
                 key={index}
               >
                 <Meta title={nft.name} style={styles.logo2} />
+                <div style={{ marginTop: 10 }}>
+                  <span
+                    style={{
+                      color: "rgba(218, 218, 218, 0.801)",
+                      fontSize: 16,
+                    }}
+                  >
+                    {nft.descricao}
+                  </span>
+                </div>
               </Card>
             ))}
 
