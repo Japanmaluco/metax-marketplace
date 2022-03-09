@@ -20,6 +20,14 @@ import Text from "antd/lib/typography/Text";
 import NFTMarketTransactions from "components/NFTMarketTransactions";
 import Logo from "../src/components/img/logo.png";
 import "./style.css";
+import { MdOutlineLocalGroceryStore, MdOutlineLiveHelp } from "react-icons/md";
+import { SiHackthebox, SiDiscord } from "react-icons/si";
+import { RiFileList2Line } from "react-icons/ri";
+import {  AiOutlineTwitter } from "react-icons/ai";
+import { FiUsers, FiHelpCircle } from "react-icons/fi";
+import { FaTwitter } from "react-icons/fa";
+
+
 const { Header, Footer } = Layout;
 
 const styles = {
@@ -79,13 +87,13 @@ const styles = {
     marginTop: 50,
   },
   navbar_lateral: {
-    backgroundColor: "#120C18",
+    backgroundColor: "#0d141a",
     width: "12%",
     height: "100%",
     position: "fixed",
     zIndex: 1,
     display: "block",
-    borderRight: "2px solid #543973",
+    borderRight: "2px solid #314c64",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -116,7 +124,7 @@ const App = ({ isServerInfo }) => {
 
   return (
     <Layout
-      style={{ height: "100vh", overflow: "auto", background: "#1C1326" }}
+      style={{ height: "100vh", overflow: "auto", background: "#131d26" }}
     >
       <Router>
         <div style={styles.navbar_lateral} className="navbar-lateral">
@@ -128,18 +136,35 @@ const App = ({ isServerInfo }) => {
               <div style={{ marginTop: 60 }}>
                 <li style={styles.teste3}>
                   <NavLink style={styles.teste2} to="/NFTMarketPlace">
-                    🛒 Marketplace
+                    <MdOutlineLocalGroceryStore style={{ fontSize: 22 }} />
+                    Marketplace
                   </NavLink>
                 </li>
                 <li style={styles.teste3}>
                   <NavLink style={styles.teste2} to="/nftBalance">
-                    🖼 My Collection
+                    <SiHackthebox /> My Collection
                   </NavLink>
                 </li>
                 <li style={styles.teste3}>
                   <NavLink style={styles.teste2} to="/Transactions">
-                    📑 Transactions
+                    <RiFileList2Line style={{ color: "white" }} /> Transactions
                   </NavLink>
+                </li>
+                <li>
+                  <div class="dropdown">
+                    <h4 class="dropbtn">
+                      <FiUsers />  Social Media
+                    </h4>
+                    <div class="dropdown-content">
+                      <a href="#"><SiDiscord />  Discord</a>
+                      <a href="#"><FaTwitter />  Twitter</a>
+                    </div>
+                  </div>
+                </li>
+                <li style={styles.teste3}>
+                  <h4 class="h4-navbar" style={styles.teste2} to="/Transactions">
+                    <FiHelpCircle style={{ color: "white" }} /> Support
+                  </h4>
                 </li>
               </div>
               <div className="chains-style">
@@ -166,7 +191,7 @@ const App = ({ isServerInfo }) => {
           <Redirect to="/NFTMarketPlace" />
         </div>
       </Router>
-      <Footer style={{ textAlign: "center", backgroundColor: "#1d1c26" }}>
+      <Footer style={{ textAlign: "center", backgroundColor: "#131d26" }}>
         <Text style={{ display: "block", color: "white" }}>
           ⭐️ Please star this{" "}
           <a

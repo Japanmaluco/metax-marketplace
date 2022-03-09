@@ -4,13 +4,14 @@ import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvide
 import { Menu, Dropdown, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { AvaxLogo, PolygonLogo, BSCLogo, ETHLogo } from "./Logos";
+
 import Carteira from "../img/carteira.png";
 
 const styles = {
   item: {
     display: "flex",
     alignItems: "center",
-    marginTop: 1,
+    marginTop: -110,
     height: "52px",
     width: "100px",
     fontWeight: "500",
@@ -18,14 +19,14 @@ const styles = {
     fontSize: "14px",
     padding: "0 10px",
     color: "white",
-    border: "2px solid #543973",
+    border: "2px solid #314c64",
     borderRadius: "12px",
-    backgroundColor: "#1c1326",
+    backgroundColor: "#131d26",
   },
   button: {
-    border: "2px solid #543973",
+    border: "2px solid #314c64",
     borderRadius: "12px",
-    backgroundColor: "#1c1326",
+    backgroundColor: "#131d26",
   },
 };
 

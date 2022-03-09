@@ -23,15 +23,50 @@
   border-radius: 1rem;
 }
 
+.h4-navbar{
+  font-weight: normal !important;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  color: rgba(218, 218, 218, 0.901);
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: rgba(218, 218, 218, 0.901);
+  text-decoration: none;
+  padding-top: 10px;
+  padding-left: 10px;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: #314c64;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+/* Change color of dropdown links on hover */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .navbar-lateral-ul li {
   list-style-type: none;
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 15px;
   padding-left: 10px;
   height: 45px;
   width: 190px;
   margin-left: 20px;
   padding-top: 9px;
+  padding-bottom: 15px;
 }
 
 .chains-style {
@@ -44,7 +79,7 @@
 }
 
 .navbar-lateral-ul li:hover {
-  background-color: #1c1326;
+  background-color: #131d26;
   border-radius: 5px;
 }
 
@@ -57,7 +92,7 @@
 }
 
 .ant-card-actions {
-  background: #120c18 !important;
+  background: #0d141a !important;
   border-top: 1px solid #120c18 !important;
 }
 
@@ -90,23 +125,23 @@
 .ant-image-img {
   border: 1px solid #120c18 !important;
   border-radius: 15px !important;
-  border-bottom: 1px solid #543973 !important;
+  border-bottom: 1px solid #314c64 !important;
 }
 
 .ant-card {
-  border: 1px solid #543973 !important;
+  border: 1px solid #314c64 !important;
 }
 
 .ant-select-selector {
   border-radius: 7px !important;
   height: 40px !important;
   align-items: center !important;
-  border: 2px solid #543973 !important;
-  background-color: #120c18 !important;
+  border: 2px solid #314c64 !important;
+  background-color: #0d141a !important;
 }
 
 .ant-select-selector:hover {
-  border-color: #543973 !important;
+  border-color: #314c64 !important;
 }
 
 .title-collection {
@@ -114,11 +149,16 @@
 }
 
 .ant-card {
-  background: #120c18 !important;
+  background: #0d141a !important;
 }
 
 .ant-card-meta-description {
   color: #fff !important;
+}
+
+.dropbtn {
+  color: rgba(218, 218, 218, 0.901);
+  font-weight: normal !important;
 }
 
 /*.imageteste {
@@ -129,4 +169,14 @@
   margin-left: 780px;
   margin-bottom: 50px;
   margin-top: 40px;
+}
+
+.lateral-teste li h3 {
+  color: #fff;
+  visibility: hidden;
+}
+
+.lateral-teste li h3 :hover {
+  visibility: visible !important;
+  color: #fff;
 }
